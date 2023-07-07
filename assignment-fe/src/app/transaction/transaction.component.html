@@ -1,0 +1,42 @@
+<div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="UserName">Processing Code:</label>
+        <input type="number" id="ProcessingCode" formControlName="ProcessingCode" required>
+      </div>
+      <div>
+        <label for="SystemTraceNr">SystemTraceNr:</label>
+        <input type="number" id="SystemTraceNr" formControlName="SystemTraceNr" required>
+      </div>
+      <div>
+        <label for="FunctionCode">FunctionCode:</label>
+        <input type="number" id="FunctionCode" formControlName="FunctionCode" required>
+      </div>
+      <div>
+        <label for="CardNo">FunctionCode:</label>
+        <input type="number" id="CardNo" formControlName="CardNo" required>
+      </div>
+      <div>
+        <label for="CardHolder">CardHolder:</label>
+        <input type="string" id="CardHolder" formControlName="CardHolder" required>
+      </div>
+      <div>
+        <label for="AmountTrxn">AmountTrxn:</label>
+        <input type="number" id="AmountTrxn" formControlName="AmountTrxn" required>
+      </div>
+      <div>
+        <label for="CurrencyCode">CurrencyCode:</label>
+        <input type="number" id="CurrencyCode" formControlName="CurrencyCode" required>
+      </div>
+      <button type="submit" [disabled]="myForm.invalid">Submit</button>
+    </form>
+    <div *ngIf="data">
+        <ul>
+            <li>  {{ data.responseCode}}  </li>
+            <li>  {{ data.message}}  </li>
+            <li>  {{ data.approvalCode}}  </li>
+            <li>  {{ data.dateTime}}  </li>
+        </ul>
+    </div>
+  </div> 
+

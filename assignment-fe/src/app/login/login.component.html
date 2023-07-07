@@ -1,0 +1,13 @@
+<div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">UserName:</label>
+        <input type="text" id="Username" formControlName="Username" required>
+      </div>
+      <div>
+        <label for="age">Password:</label>
+        <input type="text" id="Password" formControlName="Password" required>
+      </div>
+      <button type="submit" [disabled]="myForm.invalid">Submit</button>
+    </form>
+  </div> 
